@@ -302,7 +302,32 @@ rownames(dfm)</code></pre>
 <pre class="r"><code>colnames(dfa)</code></pre>
 <pre><code>[1] &quot;body&quot;  &quot;brain&quot;</code></pre>
 <ol start="4" style="list-style-type: lower-alpha">
-<li><p>Usa la función <strong>intersect</strong> y almacena en la variable <em>commonAnimals</em> los aminales que aparezcan en ambos conjuntos</p></li>
+<li>Usa la función <strong>intersect</strong> y almacena en la variable <em>commonAnimals</em> los aminales que aparezcan en ambos conjuntos</li>
+</ol>
+<pre class="r"><code>commonAnimals &lt;- intersect(dfm, dfa)
+rownames(commonAnimals)</code></pre>
+<pre><code> [1] &quot;Arctic fox&quot;                &quot;Owl monkey&quot;                &quot;Mountain beaver&quot;          
+ [4] &quot;Cow&quot;                       &quot;Grey wolf&quot;                 &quot;Goat&quot;                     
+ [7] &quot;Roe deer&quot;                  &quot;Guinea pig&quot;                &quot;Verbet&quot;                   
+[10] &quot;Chinchilla&quot;                &quot;Ground squirrel&quot;           &quot;Arctic ground squirrel&quot;   
+[13] &quot;African giant pouched rat&quot; &quot;Lesser short-tailed shrew&quot; &quot;Star-nosed mole&quot;          
+[16] &quot;Nine-banded armadillo&quot;     &quot;Tree hyrax&quot;                &quot;N.A. opossum&quot;             
+[19] &quot;Asian elephant&quot;            &quot;Big brown bat&quot;             &quot;Donkey&quot;                   
+[22] &quot;Horse&quot;                     &quot;European hedgehog&quot;         &quot;Patas monkey&quot;             
+[25] &quot;Cat&quot;                       &quot;Galago&quot;                    &quot;Genet&quot;                    
+[28] &quot;Giraffe&quot;                   &quot;Gorilla&quot;                   &quot;Grey seal&quot;                
+[31] &quot;Rock hyrax-a&quot;              &quot;Human&quot;                     &quot;African elephant&quot;         
+[34] &quot;Water opossum&quot;             &quot;Rhesus monkey&quot;             &quot;Kangaroo&quot;                 
+[37] &quot;Yellow-bellied marmot&quot;     &quot;Golden hamster&quot;            &quot;Mouse&quot;                    
+[40] &quot;Little brown bat&quot;          &quot;Slow loris&quot;                &quot;Okapi&quot;                    
+[43] &quot;Rabbit&quot;                    &quot;Sheep&quot;                     &quot;Jaguar&quot;                   
+[46] &quot;Chimpanzee&quot;                &quot;Baboon&quot;                    &quot;Desert hedgehog&quot;          
+[49] &quot;Giant armadillo&quot;           &quot;Rock hyrax-b&quot;              &quot;Raccoon&quot;                  
+[52] &quot;Rat&quot;                       &quot;E. American mole&quot;          &quot;Mole rat&quot;                 
+[55] &quot;Musk shrew&quot;                &quot;Pig&quot;                       &quot;Echidna&quot;                  
+[58] &quot;Brazilian tapir&quot;           &quot;Tenrec&quot;                    &quot;Phalanger&quot;                
+[61] &quot;Tree shrew&quot;                &quot;Red fox&quot;                  </code></pre>
+<ol start="5" style="list-style-type: lower-alpha">
 <li><p>Usa <strong>setdiff</strong> para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?</p></li>
 <li><p>Determina las diferencia entre los animales que no aparecen en ambos conjuntos.</p></li>
 </ol>
