@@ -169,9 +169,13 @@ qqPlot(log(Animals2$brain))
     ```{r}
     libReturn <- library()
     libReturn
-    length(libReturn)
+
     libReturn[[2]] [1:5]
     head(libReturn$results, n=5)
+
+    #C:)
+    length(libReturn)
+    #Tengo 3 librerias instaladas.
     ```
 
 4.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
@@ -213,9 +217,13 @@ summary(Chile)
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
 
 ```{r}
+#HeadWt):
+qqPlot(cabbages$HeadWt)
+#Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus  muestras se encuentran dentro de las las líneas discontinuas.
 
-
-
+#VitC):
+qqPlot(cabbages$VitC)
+#Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus  muestras se encuentran dentro de las las líneas discontinuas.
 
 
 ```
