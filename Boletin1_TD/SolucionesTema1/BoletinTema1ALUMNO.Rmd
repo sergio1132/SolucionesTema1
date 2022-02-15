@@ -85,15 +85,17 @@ package.check <- lapply(packages, FUN = function(x) {
 
 1.  Considera los conjuntos de datos **mammals** del paquete **MASS** y **Animals2** del paquete **robustbase**.
 
-<!-- -->
+
 
 a.  Mira la las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
-
-
+#A):
+dfm <- mammals
+dfa <- Animals2
+summarise(dfm)
 
 
 
