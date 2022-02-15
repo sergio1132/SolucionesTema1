@@ -92,13 +92,18 @@ a.  Mira la las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
+Asignamos a una variable los dos conjuntos:
+
 ```{r}
-#Asignamos a una variable los dos conjuntos.
 dfm <- mammals
 dfa <- Animals2
+```
 
-#Utilizamos las funciones dim, head, tail, str, para una primera visión de los conjuntos de datos.
-#dfm:
+Utilizamos las funciones dim, head, tail, str, para una primera visión de los conjuntos de datos.
+
+·dfm:
+
+```{r}
 summarise(dfm)
 dim(dfm)
 head(dfm)
@@ -109,8 +114,11 @@ str(dfm)
 #Nombres de las filas y las columnas:
 rownames(dfm)
 colnames(dfm)
+```
 
-#dfa:
+·dfa:
+
+```{r}
 summarise(dfa)
 dim(dfa)
 head(dfa)
@@ -132,17 +140,26 @@ rownames(commonAnimals)
 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
+A)
+
 ```{r}
 diferentesM <- setdiff(rownames(dfm), rownames(dfa))
 diferentesM
-#Son 4.
-#Son "Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat".
+```
+
+Son 4. Son "Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat".
+
+B)
+
+```{r}
+diferentesM <- setdiff(rownames(dfm), rownames(dfa))
+diferentesM
 
 diferentesA <- setdiff(rownames(dfa), rownames(dfm))
 diferentesA
-#Son 7.
-#Son "Dipliodocus" ,"Potar monkey","Triceratops",Brachiosaurus","Mole" ,"Artic fox","Artic ground squirrel".
 ```
+
+Son 7. Son "Dipliodocus" ,"Potar monkey","Triceratops",Brachiosaurus","Mole" ,"Artic fox","Artic ground squirrel".
 
 e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
@@ -155,12 +172,13 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 ```{r}
 qqPlot(log(mammals$brain))
 qqPlot(log(Animals2$brain))
-
-#Presentan un compartimiento bastante parecido.
-#Sí porque las muestras se encuentran dentro de las las líneas discontinuas.
 ```
 
-3.  La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
+3.  
+
+4.  \#Presentan un compartimiento bastante parecido.
+
+    \#Sí porque las muestras se encuentran dentro de las las líneas discontinuas.La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
 
     a.  Asigna el valor devuelto por esta función a la variable **libReturn** y observa su estructura.
     b.  Uno de los elementos de la lista es un matriz de caracteres. Muestra por pantalla los 5 primeros elementos de esta matriz usando la función **head**.
@@ -180,7 +198,7 @@ qqPlot(log(Animals2$brain))
     #Tengo 3 librerias instaladas.
     ```
 
-4.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
+5.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
 
     a.  Determina las tres primeras etapas para el conjunto de datos **cabbages** del paquete **MASS**
     b.  Puedes determinar el número de valores perdidos (almacenados como **NA** en R) usando la función **is.na**. Determina el número de valores perdidos para cada una de las variables del conjunto **cabbages**.
@@ -218,24 +236,30 @@ summary(Chile)
 
 5.  Muchas pruebas estadísticas suponen que los datos siguen una distribución Gaussiana. Utiliza la aproximación visual proporcionada por **qqPlot** para determinar si podemos asumir que las variables **HeadWt** y **VitC** del conjunto **cabbages** verifican esta condición.
 
-```{r}
-#HeadWt):
-qqPlot(cabbages$HeadWt)
-#Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus  muestras se encuentran dentro de las las líneas discontinuas.
+·HeadWt):
 
-#VitC):
-qqPlot(cabbages$VitC)
-#Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus  muestras se encuentran dentro de las las líneas discontinuas.
+```{r}
+qqPlot(cabbages$HeadWt)
 ```
+
+Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus muestras se encuentran dentro de las las líneas discontinuas.
+
+·VitC):
+
+```{r}
+qqPlot(cabbages$VitC)
+```
+
+Sí que podemos asumir esta variable como una distribuciób Gaussiana porque sus muestras se encuentran dentro de las las líneas discontinuas.
 
 6.  Una representación habitual, para determinar la distribución de los datos de una variable cuantitativa es el histograma (**hist**). Determina, de forma aproximada, utilizando el histograma, si hay diferencias entre los contenidos de vitamina C (**VitC**), para las diferentes variedades de calabaza (variable **Cult**), en el conjunto de datos **cabbages**.
 
 ```{r}
 hist(cabbages$VitC[cabbages$Cult=="c39"],col = "lightcyan")
 hist(cabbages$VitC[cabbages$Cult=="c52"],col = "lightgreen")
-
-#Sí que hay difrencias entre los contenidos de las dos variables, que se observa en los histogramas.
 ```
+
+Sí que hay difrencias entre los contenidos de las dos variables, que se observa en los histogramas.
 
 7.  Un modelo sencillo para relacionar variables es la *predicción lineal*. En el siguiente ejemplo se utiliza el conjunto de datos **whiteside**, de la librería **MASS**. Esta aproximación propone un modelo que predice una variable a partir de otra. Una primera etapa para plantear esta aproximación sería representar ambas variables mediante un diagrama de dispersión (Gráfico XY) y determinar si la relación entre variables "parece" lineal. Si es así, podemos plantear un modelo lineal (en este caso según un factor), donde se aprecia claramente que existe una relación lineal entre las dos variables consideradas. Observa y ejecuta el siguiente código.
 
@@ -256,14 +280,25 @@ abline(Model2)
 a.  Utiliza un procedimiento análogo para determinar si se aprecia una relación lineal entre los niveles de vitamina C, **VitC** en función del peso de la calabaza, **HeadWt**, en el conjunto de datos **cabbages**.
 b.  Repite el apartado anterior, pero obteniendo un modelo para cada una de las dos variedades de calabaza, **Cult**. Ver [Parámetros básicos plot](https://www.statmethods.net/advgraphs/parameters.html).
 
-```{r}
-#A):
-#Primero comparamos las dos variables que nos piden:
-plot(cabbages$VitC ~ cabbages$HeadWt)
-#Observamos que no existe ninguna relación lineal para estas variables.
+A):
 
-#B):
-#Comparamos VitC en función de HeadWt.
+Primero comparamos las dos variables que nos piden:
+
+```{r}
+plot(cabbages$VitC ~ cabbages$HeadWt)
+```
+
+Observamos que no existe ninguna relación lineal para estas variables.
+
+```{r}
+
+```
+
+B):
+
+Comparamos VitC en función de HeadWt.
+
+```{r}
 plot(cabbages$VitC ~ cabbages$HeadWt, pch = c(1,18)[cabbages$Cult])
 
 Model39 <- lm(cabbages$VitC ~ cabbages$HeadWt, data = cabbages, subset = which(Cult == "c39"))
@@ -274,6 +309,8 @@ abline(Model52)
 ```
 
 c.  Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
+
+C):
 
 ```{r}
 summary(Model39)
