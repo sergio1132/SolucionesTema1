@@ -1,7 +1,7 @@
 ---
 title: "Boletín Tema 1"
 subtitle: Tratamiento de Datos. Grado en Ciencia de Datos- UV
-author: "Marcelino Martínez"
+author: "Sergio Marín Castro"
 date:  "`r Sys.Date()`"  #Pondría la fecha del día actual
 params:
   lang: ES
@@ -147,7 +147,7 @@ diferentesM <- setdiff(rownames(dfm), rownames(dfa))
 diferentesM
 ```
 
-Son 4. Son "Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat".
+Son 4. Son **"Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat"**.
 
 B)
 
@@ -159,13 +159,11 @@ diferentesA <- setdiff(rownames(dfa), rownames(dfm))
 diferentesA
 ```
 
-Son 7. Son "Dipliodocus" ,"Potar monkey","Triceratops",Brachiosaurus","Mole" ,"Artic fox","Artic ground squirrel".
+Son 7. Son **"Dipliodocus" ,"Potar monkey","Triceratops",Brachiosaurus","Mole" ,"Artic fox","Artic ground squirrel".**
 
 e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
-```{r}
-
-```
+Los animales son los mismos, pero tienen nombres diferentes.
 
 2.  La funcion **qqPlot** del paquete **car** puede ser utilizada para determinar gráficamente si una serie de puntos siguen una distribución de datos Gaussiana. Si las muestras están dentro de las líneas discontinuas podemos indicar que siguen una distribución Gaussiana con un 95 % de confianza. Utilizando esta función representa el logaritmo neperiano (**log**) del peso del cerebro (**brain weigths**) del registro de datos **mammals** del paquete **MASS** y conjunto de datos **Animals2** de la librería **robustbase**. ¿Presentan el mismo comportamiento ?.¿Podríamos decir que siguen una distribución Gaussiana ?
 
@@ -290,13 +288,9 @@ plot(cabbages$VitC ~ cabbages$HeadWt)
 
 Observamos que no existe ninguna relación lineal para estas variables.
 
-```{r}
-
-```
-
 B):
 
-Comparamos VitC en función de HeadWt.
+Comparamos **VitC** en función de **HeadWt**.
 
 ```{r}
 plot(cabbages$VitC ~ cabbages$HeadWt, pch = c(1,18)[cabbages$Cult])
@@ -304,8 +298,8 @@ plot(cabbages$VitC ~ cabbages$HeadWt, pch = c(1,18)[cabbages$Cult])
 Model39 <- lm(cabbages$VitC ~ cabbages$HeadWt, data = cabbages, subset = which(Cult == "c39"))
 Model52 <- lm(cabbages$VitC ~ cabbages$HeadWt, data = cabbages, subset = which(Cult == "c52"))
 
-abline(Model39, lty=4)
-abline(Model52)
+abline(Model39, lty=4, col = "green")
+abline(Model52, col = "blue")
 ```
 
 c.  Usa **summary** con cada uno de los modelos obtenidos y observa **Coefficients**. Dado que hemos planteado un modelo $y=mx+n$, donde $y=VitC$ y $x=HeadWt$. La función **lm** nos permite obtener **(Intercept)**; **n** y la pendiente **HeadWt**; **m** (además de otros parámetros adicionales que evalúan la caracterísiticas del modelo). Observa que en todos los casos, la pendiene es negativa indicando que las calabazas de más peso contienen menos vitamina C. No te preocupes por el resto de parámetros del modelo, por el momento.
