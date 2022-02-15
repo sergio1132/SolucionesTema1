@@ -92,36 +92,41 @@ b.  Usa las funciones **dim, head, tail, str** para una primera visión de los c
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
-#A):
+#Asignamos a una variable los dos conjuntos.
 dfm <- mammals
 dfa <- Animals2
+
+#Utilizamos las funciones dim, head, tail, str, para una primera visión de los conjuntos de datos.
+#dfm:
 summarise(dfm)
+dim(dfm)
+head(dfm)
+head(dfm, n=3)
+tail(dfm)
+str(dfm)
 
+#Nombres de las filas y las columnas:
+rownames(dfm)
+colnames(dfm)
 
+#dfa:
+summarise(dfa)
+dim(dfa)
+head(dfa)
+tail(dfa)
+str(dfa)
+rownames(dfa)
 
-
-
-
-
-
-
-
-
-
-
-
-
+#Nombres de las filas y las columnas:
+rownames(dfa)
+colnames(dfa)
 ```
 
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
-
-
-
-
-
-
+commonAnimals <- intersect(dfm, dfa)
+rownames(commonAnimals)
 ```
 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
