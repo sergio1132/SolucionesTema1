@@ -132,28 +132,20 @@ rownames(commonAnimals)
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
 ```{r}
+diferentesM <- setdiff(rownames(dfm), rownames(dfa))
+diferentesM
+#Son 4.
+#Son "Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat".
 
-
-
-
-
-
+diferentesA <- setdiff(rownames(dfa), rownames(dfm))
+diferentesA
+#Son 7.
+#Son "Dipliodocus" ,"Potar monkey","Triceratops",Brachiosaurus","Mole" ,"Artic fox","Artic ground squirrel".
 ```
 
 e.  Determina las diferencia entre los animales que no aparecen en ambos conjuntos.
 
 ```{r}
-
-
-
-
-
-
-
-
-
-
-
 
 ```
 
