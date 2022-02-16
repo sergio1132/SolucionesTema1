@@ -139,9 +139,8 @@ rownames(commonAnimals)
 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
-```{=html}
 <!-- -->
-```
+
 A)  
 
 ```{r}
@@ -188,10 +187,12 @@ qqPlot(log(Animals2$brain))
     #B):
     libReturn[[2]] [1:5]
     head(libReturn$results, n=5)
+    ```
 
-    #C):
-    length(libReturn)
-    #Tengo 3 librerias instaladas.
+    ```{r}
+    #C:
+    length(search())
+    #Tengo 24 librerias.
     ```
 
 2.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
