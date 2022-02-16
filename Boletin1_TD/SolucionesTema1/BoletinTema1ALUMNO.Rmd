@@ -85,9 +85,8 @@ package.check <- lapply(packages, FUN = function(x) {
 
 1.  Considera los conjuntos de datos **mammals** del paquete **MASS** y **Animals2** del paquete **robustbase**.
 
-```{=html}
 <!-- -->
-```
+
 a.  Mira la las características de ambos conjuntos usando la ayuda.
 b.  Usa las funciones **dim, head, tail, str** para una primera visión de los conjuntos de datos.
 c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
@@ -140,7 +139,10 @@ rownames(commonAnimals)
 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
-A)
+```{=html}
+<!-- -->
+```
+A)  
 
 ```{r}
 diferentesM <- setdiff(rownames(dfm), rownames(dfa))
@@ -149,7 +151,7 @@ diferentesM
 
 Son 4. Son **"Arctic fox" ,"Arctic ground squirrel", "Patas monkey" y "Mole rat"**.
 
-B)
+B)  
 
 ```{r}
 diferentesM <- setdiff(rownames(dfm), rownames(dfa))
@@ -172,11 +174,7 @@ qqPlot(log(mammals$brain))
 qqPlot(log(Animals2$brain))
 ```
 
-3.  
-
-4.  \#Presentan un compartimiento bastante parecido.
-
-    \#Sí porque las muestras se encuentran dentro de las las líneas discontinuas.La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
+1.  La función **library** sin argumentos abre una ventana y muestra las librerías que han sido instaladas.
 
     a.  Asigna el valor devuelto por esta función a la variable **libReturn** y observa su estructura.
     b.  Uno de los elementos de la lista es un matriz de caracteres. Muestra por pantalla los 5 primeros elementos de esta matriz usando la función **head**.
@@ -196,7 +194,7 @@ qqPlot(log(Animals2$brain))
     #Tengo 3 librerias instaladas.
     ```
 
-5.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
+2.  En las transparencias del tema 1 se citan los primeros pasos a seguir cuando se analiza un nuevo conjunto de datos.
 
     a.  Determina las tres primeras etapas para el conjunto de datos **cabbages** del paquete **MASS**
     b.  Puedes determinar el número de valores perdidos (almacenados como **NA** en R) usando la función **is.na**. Determina el número de valores perdidos para cada una de las variables del conjunto **cabbages**.
